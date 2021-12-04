@@ -26,7 +26,7 @@ def main():
             pos[0] += vec[0]
             pos[1] += vec[1]
             for i in range(2):
-                if pos[i] > width or pos[i] < 0:
+                if pos[i] > (width, height)[i] or pos[i] < 0:
                     vec[i] = -vec[i]
             rect = (pos[0] - size // 2, pos[1] - size // 2, size,  size)
             pygame.draw.ellipse(screen, (200, 200, 0), rect) 
