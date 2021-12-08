@@ -28,6 +28,20 @@ class Board:
                     1
                 )
 
+    def get_click(self, mouse_pos):
+        pos = self.get_cell(mouse_pos)
+        self.on_click(pos)
+
+    def on_click(self, cell_coords):
+        print(cell_coords)
+
+    def get_cell(self, mouse_pos):
+        cell_x = (mouse_pos[0] - self.left) // self.cell_size
+        cell_y = (mouse_pos[1] - self.top) // self.cell_size
+        if cell_x < 0 or cell_x >= self.width or cell_y < 0 or cell_y >= self.height:
+            return None
+        return cell_x, cell_y
+
 
 # поле 5 на 7
 board = Board(5, 7)
@@ -38,6 +52,8 @@ while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            board.get_click(pygame.mouse.get_pos())
     screen.fill((0, 0, 0))
     board.render(screen)
     pygame.display.flip()
