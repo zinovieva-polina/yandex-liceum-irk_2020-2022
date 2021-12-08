@@ -1,3 +1,10 @@
+import pygame
+
+pygame.init()
+screen = pygame.display.set_mode((500, 500))
+
+
+
 class Board:
     # создание поля
     def __init__(self, width, height):
