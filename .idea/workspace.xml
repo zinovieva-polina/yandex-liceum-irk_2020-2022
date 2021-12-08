@@ -19,7 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5dfef152-e96f-4d81-abee-c7d8d2fc63b5" name="Changes" comment="решил 1 задачу" />
+    <list default="true" id="5dfef152-e96f-4d81-abee-c7d8d2fc63b5" name="Changes" comment="дополнил доску до 3 задачи" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,7 +55,7 @@
       <recent name="C:\Users\Даниил\yandex-liceum-irk_2020-2022\Змановский Даниил" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.board">
     <configuration name="ans1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="yandex-liceum-irk_2020-2022" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -77,8 +77,30 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="board" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="yandex-liceum-irk_2020-2022" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Demyan_Bubnov" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Demyan_Bubnov/board.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.board" />
         <item itemvalue="Python.ans1" />
       </list>
     </recent_temporary>
@@ -123,7 +145,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638609192807</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="дополнил доску до 3 задачи">
+      <created>1638953678543</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1638953678543</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -142,7 +171,8 @@
     <MESSAGE value="Даниил Змановский" />
     <MESSAGE value="добавил свою папку" />
     <MESSAGE value="решил 1 задачу" />
-    <option name="LAST_COMMIT_MESSAGE" value="решил 1 задачу" />
+    <MESSAGE value="дополнил доску до 3 задачи" />
+    <option name="LAST_COMMIT_MESSAGE" value="дополнил доску до 3 задачи" />
   </component>
   <component name="WindowStateProjectService">
     <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1638608258085">
