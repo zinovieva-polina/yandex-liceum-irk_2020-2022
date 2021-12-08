@@ -23,11 +23,17 @@ class Board:
         self.cell_size = cell_size
 
     def render(self, screen):
+        colors = [pygame.Color(0, 0, 0), pygame.Color(255, 255, 255)]
         for y in range(self.height):
             for x in range(self.width):
                 pygame.draw.rect(
                     screen,
-                    pygame.Color(255, 255, 255),
+                    colors[self.board[y][x]],
+                    (x * self.cell_size + self.left, y * self.cell_size + self.top, self.cell_size, self.cell_size),
+                )
+                pygame.draw.rect(
+                    screen,
+                    colors[1],
                     (x * self.cell_size + self.left, y * self.cell_size + self.top, self.cell_size, self.cell_size),
                     1
                 )
@@ -40,7 +46,13 @@ class Board:
         return cell_x, cell_y
     
     def on_click(self, cell):
-        print(cell)
+        for i in range(self.width):
+            self.board[cell[1]][i] = (self.board[cell[1]][i] + 1) % 2
+        for i in range(self.height):
+            if i == cell[1]:
+                continue
+            self.board[i][cell[0]] = (self.board[i][cell[0]] + 1) % 2
+        print(self.board)
 
     def get_click(self, mouse_pos):
         cell = self.get_cell(mouse_pos)
