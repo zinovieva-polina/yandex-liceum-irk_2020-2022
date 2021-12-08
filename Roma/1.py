@@ -7,7 +7,7 @@ class Board:
     def __init__(self, width, height):
         self.width = width
         self.height = height
-        self.board = [[randint(0, 1)] * width for _ in range(height)]
+        self.board = [[2] * width for _ in range(height)]
         # значения по умолчанию
         self.left = 10
         self.top = 10
@@ -21,14 +21,32 @@ class Board:
         self.cell_size = cell_size
 
     def render(self, screen):
-        colors = (pygame.Color(255, 0, 0), pygame.Color(0, 0, 255))
+        colors = (pygame.Color(255, 0, 0), pygame.Color(0, 0, 255), pygame.Color(0, 0, 0))
         for y in range(self.height):
             for x in range(self.width):
-                pygame.draw.ellipse(
-                    screen,
-                    colors[self.board[y][x]],
-                    (x * self.cell_size + self.left, y * self.cell_size + self.top, self.cell_size, self.cell_size)
-                )
+                if not self.board[y][x]:
+                    pygame.draw.ellipse(
+                        screen,
+                        colors[self.board[y][x]],
+                        (x * self.cell_size + self.left + 2, y * self.cell_size + self.top + 2,
+                         self.cell_size - 2, self.cell_size - 2),
+                        2
+                    )
+                else:
+                    pygame.draw.line(
+                        screen,
+                        colors[self.board[y][x]],
+                        (x * self.cell_size + self.left + 2, y * self.cell_size + self.top + 2),
+                        ((x + 1) * self.cell_size + self.left - 2, (y + 1) * self.cell_size + self.top - 2),
+                        3
+                    )
+                    pygame.draw.line(
+                        screen,
+                        colors[self.board[y][x]],
+                        ((x + 1) * self.cell_size + self.left - 2, y * self.cell_size + self.top + 2),
+                        (x * self.cell_size + self.left + 2, (y + 1) * self.cell_size + self.top - 2),
+                        3
+                    )
                 pygame.draw.rect(
                     screen,
                     pygame.Color(255, 255, 255),
@@ -43,10 +61,8 @@ class Board:
     def on_click(self, cell_coords):
         if cell_coords:
             x, y = cell_coords
-            curr_color = self.board[y][x]
-            if self.turn == curr_color:
-                self.board[y] = [curr_color for _ in self.board[y]]
-                self.board = [[curr_color if j == x else i[j] for j in range(len(i))] for i in self.board]
+            if self.board[y][x] == 2:
+                self.board[y][x] = self.turn
                 self.turn = not self.turn
 
     def get_cell(self, mouse_pos):
