@@ -25,6 +25,21 @@ class Board:
                 y_top = self.top + y * self.cell_size
                 pygame.draw.rect(screen, w, (x_left, y_top, self.cell_size, self.cell_size), 1)
 
+    def get_cell(self, mouse_pos):
+        x, y = mouse_pos
+        x -= self.left
+        y -= self.top
+        if 0 < x < self.cell_size * self.width and 0 < y < self.cell_size * self.height:
+            cell_x = x // self.cell_size
+            cell_y = y // self.cell_size
+            return cell_x, cell_y
+
+    def on_click(self, cell):
+        print(cell)
+
+    def get_click(self, mouse_pos):
+        cell = self.get_cell(mouse_pos)
+        self.on_click(cell)
 
 
 if __name__ == '__main__':
@@ -38,6 +53,8 @@ if __name__ == '__main__':
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                board.get_click(event.pos)
         screen.fill((0, 0, 0))
         board.render(screen)
         pygame.display.flip()
