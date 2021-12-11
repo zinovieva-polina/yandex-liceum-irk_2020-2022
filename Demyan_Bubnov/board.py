@@ -37,11 +37,7 @@ class Board:
 
     def on_click(self, cell):
         x, y = cell
-        for xx in range(len(self.board[y])):
-            if xx != x:
-                self.board[y][xx] = (self.board[y][xx] + 1) % len(color)
-        for yy in range(len(self.board)):
-            self.board[yy][x] = (self.board[yy][x] + 1) % len(color)
+        self.board[y][x] = (self.board[y][x] + 1) % len(color)
 
     def get_click(self, mouse_pos):
         cell = self.get_cell(mouse_pos)
@@ -56,7 +52,7 @@ if __name__ == '__main__':
     screen = pygame.display.set_mode((DW, DH))
     board = Board(5, 7)
     running = True
-    color = [pygame.Color("black"), pygame.Color("white")]
+    color = [pygame.Color("black"), pygame.Color("red"), pygame.Color("blue")]
     while running:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
