@@ -15,7 +15,7 @@ except Exception:
 def krest(screen, x, y, c='orange'):
     x += 10
     y += 10
-    pygame.draw.circle(screen, c, (x, y), 50, 5, draw_bottom_right=True)
+    pyame.draw.circle(screen, c, (x, y), 50, 5, draw_bottom_right=True)
     pygame.draw.line(screen, c, [x + 45, y], [x + 87, y], 5)
     pygame.draw.circle(screen, c, (x + 135, y), 50, 5, draw_bottom_left=True)
     pygame.draw.line(screen, c, [x + 135, y + 45], [x + 135, y + 94], 5)
